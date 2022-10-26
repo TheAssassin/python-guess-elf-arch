@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=pygea
+Type=Application
+Icon=pygea
+Exec=pygea
+NoDisplay=true
+Terminal=true
+Categories=Development;

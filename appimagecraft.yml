@@ -1,0 +1,22 @@
+version: 1
+
+project:
+  name: com.github.theassassin.python_guess_elf_arch
+  version_command: git rev-parse --short HEAD
+
+# no build needed, deployment is handled by ld-p-conda below
+build:
+  null:
+
+appimage:
+  linuxdeploy:
+    plugins:
+      - conda
+    extra_args: -i "$PROJECT_ROOT"/deployment/pygea.svg -d "$PROJECT_ROOT"/deployment/pygea.desktop --custom-apprun "$PROJECT_ROOT"/deployment/AppRun.sh
+    environment:
+      PIP_REQUIREMENTS: .
+      CONDA_PACKAGES: "cppyy"
+    raw_environment:
+      - PIP_WORKDIR="$PROJECT_ROOT"
+      - OUTPUT=pygea-"$ARCH".AppImage
+      - UPD_INFO="gh-releases-zsync|TheAssassin|python-guess-elf-arch|continuous|pygea-*$ARCH.AppImage.zsync"

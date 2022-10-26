@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "guess-elf-arch"
+version = "0.0.1"
+description = "Guess an ELF's architecture using the system's elf.h"
+authors = ["TheAssassin <theassassin@assassinate-you.net>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+cppyy = "^2.4.1"
+click = "^8.1.3"
+
+[tool.poetry.dev-dependencies]
+black = {extras = ["d"], version = "^22.10.0"}
+flake8 = "^5.0.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
